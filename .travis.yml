@@ -8,6 +8,5 @@ addons:
     - dosfstools
     - zip
 script:
-- sudo -i 
-- bash create-image
+- sudo bash create-image
 - travis_wait zip rpi-base.img.zip rpi-base.img
