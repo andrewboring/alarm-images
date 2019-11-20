@@ -1,0 +1,13 @@
+dist: trusty
+sudo: required
+addons:
+  apt:
+    packages:
+    - parted
+    - wget
+    - dosfstools
+    - zip
+script:
+- sudo bash ./create-image
+- xz -z rpiz-base.img -c > rpi-base.img.xz
+- zip rpi-base.img.zip rpi-base.img
