@@ -9,4 +9,5 @@ addons:
     - zip
 script:
 - sudo bash create-image
-- travis_wait zip rpi-base.img.zip rpi-base.img
+- xz -v -z rpizw-rover.img -c > rpizw-rover.img.xz
+- zip -v rpi-base.img.zip rpi-base.img
