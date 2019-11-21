@@ -15,12 +15,9 @@ So, building on the work documented by disconnected.systems ([here](https://disc
 Just download, burn, and boot!
 
 ## Releases
-If you just want the downloads, head over to Releases and get the appropriate one for your Raspberry Pi.
+If you just want the downloads, head over to [Releases](https://github.com/andrewboring/alarm-images/releases) and get the appropriate one for your Raspberry Pi. Or select the latest version from the Files section below.
+
 Then follow the standard instructions for your operating system to burn the image to your SD Card.
-
-Or select the latest version from the Files section below.
-
-RPI ()
 
 
 ### Files
@@ -34,6 +31,11 @@ Upstream: https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3
 [rpi-4-archlinux.img.zip](https://github.com/andrewboring/alarm-images/releases/latest/download/rpi-3-archlinux.img.zip): Supplies ARMv7 kernel and RPi firmware, at the moment. Use RPI-3 above if you want aarch64 support.
 
 [ to do: add more details on ARMv7 vs ARMv8 vs aarch32 vs aarch64 ]
+
+### Frequency
+Arch Linux ARM project releases updated tarballs periodically, but not with the same frequency as Arch Linux. Therefore, these images may not be aligned with the latest tarball from Arch Linux ARM. 
+
+[ to do: add script to master control to check for upstream updates and trigger a new release on demand]
 
 ## Source
 The source includes a Vagrant file to boot Arch Linux, which then automatically downloads and builds the three releases. You'll need [Vagrant](https://www.vagrantup.com) and [Virtualbox](https://virtualbox.org).
