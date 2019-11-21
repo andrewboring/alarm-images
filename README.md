@@ -28,7 +28,7 @@ Then follow the standard instructions for your operating system to burn the imag
   - Upstream: https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3
 
 - [rpi-4-archlinux.img.zip](https://github.com/andrewboring/alarm-images/releases/latest/download/rpi-3-archlinux.img.zip): Supplies ARMv7 kernel and RPi firmware, at the moment. Use RPI-3 above if you want aarch64 support.
-  - Upstream: https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3
+  - Upstream: https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4
 
 [ to do: add more details on ARMv7 vs ARMv8 vs aarch32 vs aarch64 ]
 
