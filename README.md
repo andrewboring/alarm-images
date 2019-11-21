@@ -11,7 +11,7 @@ It's hard to buy small SD Cards these days. While you can still find 8GB and 16G
 
 I was doing a bunch of work for a client with an older version Arch Linux ARM that they had been imaging, and needed to test an upgrade script. Creating an image from their 32GB card wasted space on my laptop, and re-writing it every time I needed to boot clean was a four-hour job. I didn't have a duplicator at the time.
 
-So, building on the work documented by [disconnected.systems](https://disconnected.systems) ([blog post](https://disconnected.systems/blog/raspberry-pi-archlinuxarm-setup/) and [other blog post](https://disconnected.systems/blog/custom-rpi-image-with-github-travis//)), I now have a set of default images that are 8GB in size that I can quickly write [and customize] as needed.
+So, building on the work documented by [disconnected.systems](https://disconnected.systems) (in [this blog post](https://disconnected.systems/blog/raspberry-pi-archlinuxarm-setup/) and [this other blog post](https://disconnected.systems/blog/custom-rpi-image-with-github-travis//)), I now have a set of default images that are 8GB in size that I can quickly write [and customize] as needed.
 Just download, burn, and boot!
 
 ## Releases
