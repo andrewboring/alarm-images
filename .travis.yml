@@ -9,15 +9,12 @@ addons:
     - zip
 script:
 - sudo bash create-image rpi-2
-- xz -v -z rpi-2-archlinux.img -c > rpi-2-archlinux.img.xz
 - zip -v rpi-2-archlinux.img.zip rpi-2-archlinux.img
 - sudo rm rpi-2-archlinux.img
 - sudo bash create-image rpi-3
-- xz -v -z rpi-3-archlinux.img -c > rpi-3-archlinux.img.xz
 - zip -v rpi-3-archlinux.img.zip rpi-3-archlinux.img
 - sudo rm rpi-3-archlinux.img
 - sudo bash create-image rpi-4
-- xz -v -z rpi-4-archlinux.img -c > rpi-4-archlinux.img.xz
 - zip -v rpi-4-archlinux.img.zip rpi-4-archlinux.img
 - sudo rm rpi-4-archlinux.img
 
@@ -26,11 +23,8 @@ deploy:
   api_key:
     secure: ByB/QYRKoondzkq0VzoMWWTibmlJBaYjb4PeRexIB60LegxUxUfpfKYcaxXedXq8JzbqGu27O+OMKToWxKyUzcd/NrK2NfQ/fEQD8UV+972k4eyJ56Y7NfGgcF6QnlD++NvTKobT/hojGoaNvrL0Sef/XD6uBZcUK0UnOe3lV1xg5QicAT7tQDfI2hYVNSgR81ETkXReZ6y9z2fZ5rjH24orJW4wsPps1KoXrHJ782FL4ybAZ7t5vcDyloYSDqwHFDK3gbyXn+max+/8k5v9O3JUSs7nILd1YHlz+Y5oksxyqmEcutMfcZCtrOGCrfAZRtwgMMTURnMPQaQn/zbKAFnBjrtltY8WMPGrn19+vvznvn6zvo3OXWpsZtdaKEud+mCBbp59xtiI0LBz5JSUmqyt6Xc/0+pM5RDmDL9KYkGybLMNoZcyMn+VMqIQn4PHs9PiquiKfk+bMkqVM12w/1K1iOyTd12f3IxWNArelW+pwD9hS0mDO5+QjPap/tp1AmvWwhlTI+tbWNNh2wh+8xumHuqvZe/gdLOSLFdexRn/2e8/q578QFJX/w1d2WSJdFB87q/Xq8l9fqcm81UKwPv/SEQq5VwF8K8reVDaW2H7PieRSuXxi0LPM+8ytxZmAFVqnqV+QjYpBA71hLPm5ffEelAR/hskht5j+9XiX5Q=
   file:
-  - rpi-2-archlinux.img.xz
   - rpi-2-archlinux.img.zip
-  - rpi-3-archlinux.img.xz
   - rpi-3-archlinux.img.zip
-  - rpi-4-archlinux.img.xz
   - rpi-4-archlinux.img.zip
   skip_cleanup: true
   on:
