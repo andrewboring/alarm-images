@@ -9,15 +9,16 @@ Each image is built from upstream binaries distributed by the Arch Linux ARM pro
 ## Background
 It's hard to buy small SD Cards these days. While you can still find 8GB and 16GB cards on the market, the conventional starting point is a 32 GB SD Card. While it's trivial to prepare and install ALArm on a SD Card, sometimes its nice to just have an image you can write over and over as needed.
 
-But creating a master image from a 32GB card takes considerable time, and writing back to a new card takes even longer. Much faster to create an 8GB image that we can use download and write quickly to card.
+I was doing a bunch of work for a client with an older version Arch Linux ARM that they had been imaging, and needed to test an upgrade script. Creating an image from their 32GB card wasted space on my laptop, and re-writing it every time I needed to boot clean was a four-hour job. I didn't have a duplicator at the time.
 
-Download, burn, and boot!
+So, building on the work documented by disconnected.systems ([here](https://disconnected.systems/blog/raspberry-pi-archlinuxarm-setup/#cleaning-up) and [here](https://disconnected.systems/blog/raspberry-pi-archlinuxarm-setup/)) now I have a set of default images that are 8GB in size that I can write [and customize] as needed.
+Just download, burn, and boot!
 
 ## Releases
 If you just want the downloads, head over to Releases and get the appropriate one for your Raspberry Pi.
 Then follow the standard instructions for your operating system to burn the image to your SD Card.
 
-Or select the latest versionm fromt he Files section below.
+Or select the latest version from the Files section below.
 
 RPI ()
 
