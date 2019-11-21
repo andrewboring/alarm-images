@@ -2,8 +2,9 @@
 Arch Linux Arm Base Images for Raspberry Pi
 
 
-This repository contains automated image builds of [Arch Linux ARM] for Raspberry Pi 2, 3, and 4.  
-These are *not* official images, nor are they supported by the [Arch Linux](https://www.archlinux.org) or [Arch Linux ARM](https://archlinuxarm.org) projects.
+This repository contains automated image builds of [Arch Linux ARM](https://archlinuxarm.org) for Raspberry Pi 2, 3, and 4.  
+
+These are *not* official images from, nor are they supported by the [Arch Linux](https://www.archlinux.org) or [Arch Linux ARM](https://archlinuxarm.org) projects. They are provided by me, to you, as-is, with no warranty, blah blah blah.
 
 Each image is built from [upstream tarballs](https://archlinuxarm.org/about/downloads) distributed by the Arch Linux ARM project, but written to a prepared 8GB image file. This image file can then be written to any SD Card 8GB+. The remaining space of the SD Card can be used as desired (expand partition and filesystem to fit, or create additional partitions).
 
@@ -43,6 +44,6 @@ The Arch Linux ARM projects releases updated tarballs, but not with the same fre
 ## Source
 The source repo includes a Vagrant file to boot a default Arch Linux box, and launches a script to automatically download the tarballs and build the releases. You'll need [Vagrant](https://www.vagrantup.com) and [Virtualbox](https://virtualbox.org).
 
-If you'd like to build a specific image yourself (eg, to change the image size or add additional software to the image), just edit the Vagrant file and comment out the shell stuff. The create-image file will be available in /tmp/vagrant for you to run manually to create a single image. 
+If you'd like to build a specific image yourself (eg, to change the image size or add additional software to the image), just edit the Vagrant file and comment out the shell stuff. The create-image file will be available in /tmp/vagrant for you to run manually to create a single image.
 
 Once built, you'll need to copy the appropriate image out of the Vagrant box before deleting it.
