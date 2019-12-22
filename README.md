@@ -37,7 +37,7 @@ Then follow the standard instructions for your operating system to burn the imag
 [ to do: add more details on ARMv7 vs ARMv8 vs aarch32 vs aarch64 ]
 
 ### Update Frequency
-The Arch Linux ARM projects releases updated tarballs, but not with the same frequency as Arch Linux. Therefore, these images may not be aligned with the latest tarball from Arch Linux ARM.
+The Arch Linux ARM project releases updated tarballs, but not with the same frequency as Arch Linux. Therefore, these images may not be aligned with the latest tarball from Arch Linux ARM.
 
 [ to do: add script to master control to check for upstream updates and trigger a new release on demand]
 
