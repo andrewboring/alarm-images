@@ -9,7 +9,7 @@ addons:
     - zip
 script:
 - sudo bash create-image rpi
-- zip -v rpi-archlinux.img.zip rpi-2-archlinux.img
+- zip -v rpi-archlinux.img.zip rpi-archlinux.img
 - sudo rm rpi-archlinux.img
 - sudo bash create-image rpi-2
 - zip -v rpi-2-archlinux.img.zip rpi-2-archlinux.img
