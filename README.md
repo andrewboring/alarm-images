@@ -41,6 +41,15 @@ The Arch Linux ARM project releases updated tarballs, but not with the same freq
 
 [ to do: add script to master control to check for upstream updates and trigger a new release on demand]
 
+
+## Requirements
+
+To use this on Arch Linux, you need to install some build dependencies
+
+```
+pacman -Syu dosfstools parted wget
+```
+
 ## Source
 The source repo includes a Vagrant file to boot a default Arch Linux box, and launches a script to automatically download the tarballs and build the releases. You'll need [Vagrant](https://www.vagrantup.com) and [Virtualbox](https://virtualbox.org).
 
