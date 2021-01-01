@@ -17,6 +17,9 @@ script:
 - sudo bash create-image rpi-4
 - zip -v rpi-4-archlinux.img.zip rpi-4-archlinux.img
 - sudo rm rpi-4-archlinux.img
+- sudo bash create-image aarch64
+- zip -v aarch64-archlinux.img.zip aarch64-archlinux.img
+- sudo rm aarch64-archlinux.img
 
 deploy:
   provider: releases
