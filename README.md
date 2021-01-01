@@ -2,7 +2,7 @@
 Arch Linux Arm Base Images for Raspberry Pi
 
 
-This repository contains automated image builds of [Arch Linux ARM](https://archlinuxarm.org) for Raspberry Pi 2, 3, and 4.  
+This repository contains automated image builds of [Arch Linux ARM](https://archlinuxarm.org) for Raspberry Pi 2, 3, and 4.
 
 These are *not* official images from, nor are they supported by the [Arch Linux](https://www.archlinux.org) or [Arch Linux ARM](https://archlinuxarm.org) projects. They are provided by me, to you, as-is, with no warranty, blah blah blah.
 
