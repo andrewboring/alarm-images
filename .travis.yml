@@ -14,9 +14,6 @@ script:
 - sudo bash create-image rpi-2
 - zip -v rpi-2-archlinux.img.zip rpi-2-archlinux.img
 - sudo rm rpi-2-archlinux.img
-- sudo bash create-image rpi-3
-- zip -v rpi-3-archlinux.img.zip rpi-3-archlinux.img
-- sudo rm rpi-3-archlinux.img
 - sudo bash create-image rpi-4
 - zip -v rpi-4-archlinux.img.zip rpi-4-archlinux.img
 - sudo rm rpi-4-archlinux.img
