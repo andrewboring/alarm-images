@@ -28,10 +28,10 @@ Then follow the standard instructions for your operating system to burn the imag
 - [rpi-2-archlinux.img.zip](https://github.com/andrewboring/alarm-images/releases/latest/download/rpi-2-archlinux.img.zip): For ARMv7, with the Raspberry Pi firmware. Also works on Raspberry Pi 3 series. Use this if you need VC4 stuff (like the GPU).
   - Upstream: https://archlinuxarm.org/platforms/armv7/broadcom/raspberry-pi-2
 
-- [rpi-3-archlinux.img.zip](https://github.com/andrewboring/alarm-images/releases/latest/download/rpi-3-archlinux.img.zip): For ARMv8/Aarch64, with Uboot and Mainline Linux kernel. Almost full support for the board itself, but you get zero GPU. Experimental 64-bit Raspberry Pi firmware package is available, if you really want 64-bit and GPU.
-  - Upstream: https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-3
-
 - [rpi-4-archlinux.img.zip](https://github.com/andrewboring/alarm-images/releases/latest/download/rpi-3-archlinux.img.zip): Supplies ARMv7 kernel and RPi firmware, at the moment. Use RPI-3 above if you want aarch64 support.
+  - Upstream: https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4
+
+- [aarch64-archlinux.img.zip](https://github.com/andrewboring/alarm-images/releases/latest/download/aarh64-archlinux.img.zip): For ARMv8/Aarch64, works on RPI3/4, with Uboot and Mainline Linux kernel.
   - Upstream: https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4
 
 [ to do: add more details on ARMv7 vs ARMv8 vs aarch32 vs aarch64 ]
