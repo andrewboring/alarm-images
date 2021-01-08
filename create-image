@@ -13,7 +13,7 @@ mount="mnt" # Local directory to mount the image (automatically created/delete a
 #script="setup" # Local setup script to run inside the image
 #rpi_tar="ArchLinuxARM-rpi-3-latest.tar.gz" # Raspberry pi 1 image others can be found on https://archlinuxarm.org/
 
-rpi_url="http://archlinuxarm.org/os"
+rpi_url="https://archlinuxarm.org/os"
 
 # Grab the first two arguments, using the defaults if not set
 # This allows running the command as any of
