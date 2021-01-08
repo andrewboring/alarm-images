@@ -2,7 +2,7 @@
 Arch Linux Arm Base Images for Raspberry Pi
 
 
-This repository contains automated image builds of [Arch Linux ARM](https://archlinuxarm.org) for Raspberry Pi 2, 3, and 4.  
+This repository contains automated image builds of [Arch Linux ARM](https://archlinuxarm.org) for Raspberry Pi 2, 3, and 4.
 
 These are *not* official images from, nor are they supported by the [Arch Linux](https://www.archlinux.org) or [Arch Linux ARM](https://archlinuxarm.org) projects. They are provided by me, to you, as-is, with no warranty, blah blah blah.
 
@@ -40,6 +40,15 @@ Then follow the standard instructions for your operating system to burn the imag
 The Arch Linux ARM project releases updated tarballs, but not with the same frequency as Arch Linux. Therefore, these images may not be aligned with the latest tarball from Arch Linux ARM.
 
 [ to do: add script to master control to check for upstream updates and trigger a new release on demand]
+
+
+## Requirements
+
+To use this on Arch Linux, you need to install some build dependencies
+
+```
+pacman -Syu dosfstools parted wget
+```
 
 ## Source
 The source repo includes a Vagrant file to boot a default Arch Linux box, and launches a script to automatically download the tarballs and build the releases. You'll need [Vagrant](https://www.vagrantup.com) and [Virtualbox](https://virtualbox.org).
