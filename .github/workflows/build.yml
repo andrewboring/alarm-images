@@ -34,11 +34,25 @@ jobs:
           sudo bash create-image rpi-4
           zip -v rpi-4-archlinux.img.zip rpi-4-archlinux.img
 
-      # Note: This won't work on RPi4 as it need to modify /etc/fstab.
-      - name: Build Raspberry Pi AArch64 Image
+      - name: Build Raspberry Pi 3 AArch64 Image
         run: |
           sudo bash create-image rpi-aarch64
-          zip -v rpi-aarch64-archlinux.img.zip rpi-aarch64-archlinux.img
+          sudo cp rpi-aarch64-archlinux.img rpi-3-aarch64-archlinux.img
+          zip -v rpi-3-aarch64-archlinux.img.zip rpi-3-aarch64-archlinux.img
+
+      - name: Build Raspberry Pi 4 AArch64 Image
+        run: |
+          sudo cp rpi-aarch64-archlinux.img rpi-4-aarch64-archlinux.img
+
+          mkdir root
+          loopdev=$(sudo losetup --find --show rpi-4-aarch64-archlinux.img)
+          rootdev=$(sudo ls "${loopdev}"*2)
+          sudo mount "${rootdev}" root
+          sudo sed -i 's/mmcblk0/mmcblk1/g' root/etc/fstab
+          sudo umount root
+          sudo rmdir root
+
+          zip -v rpi-4-aarch64-archlinux.img.zip rpi-4-aarch64-archlinux.img
 
 
       # Upload artifacts
@@ -60,11 +74,17 @@ jobs:
           name: rpi-4-archlinux.img
           path: rpi-4-archlinux.img
 
-      - name: Upload Raspberry Pi AArch64 Image artifact
+      - name: Upload Raspberry Pi 3 AArch64 Image artifact
         uses: actions/upload-artifact@v2
         with:
-          name: rpi-aarch64-archlinux.img
-          path: rpi-aarch64-archlinux.img
+          name: rpi-3-aarch64-archlinux.img
+          path: rpi-3-aarch64-archlinux.img
+
+      - name: Upload Raspberry Pi 4 AArch64 Image artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: rpi-4-aarch64-archlinux.img
+          path: rpi-4-aarch64-archlinux.img
 
 
       # Upload to release
@@ -76,6 +96,7 @@ jobs:
             rpi-archlinux.img.zip
             rpi-2-archlinux.img.zip
             rpi-4-archlinux.img.zip
-            rpi-aarch64-archlinux.img.zip
+            rpi-3-aarch64-archlinux.img.zip
+            rpi-4-aarch64-archlinux.img.zip
         env:
           GITHUB_TOKEN: ${{ github.token }}
