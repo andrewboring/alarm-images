@@ -49,8 +49,8 @@ echo Downloading ${file}
 fallocate -l "${size}" "${image}"
 loopdev=$(losetup --find --show "${image}")
 parted --script "${loopdev}" mklabel msdos
-parted --script "${loopdev}" mkpart primary fat32 0% 100M
-parted --script "${loopdev}" mkpart primary ext4 100M 100%
+parted --script "${loopdev}" mkpart primary fat32 0% 200M
+parted --script "${loopdev}" mkpart primary ext4 200M 100%
 bootdev=$(ls "${loopdev}"*1)
 rootdev=$(ls "${loopdev}"*2)
 mkfs.vfat -F32 ${bootdev}
