@@ -34,6 +34,7 @@ size="${2:-8G}"
 arch="${1:-armv7}"
 image="rpi-${arch}-archlinux.img"
 file="ArchLinuxARM-rpi-${arch}-latest.tar.gz"
+loopdev=
 
 # Tasks to run when the shell exits for any reason, unmount the image and
 # general cleanup
@@ -47,7 +48,7 @@ cleanup() {
         umount "${mount}" || true
         rmdir "${mount}" || true
     fi
-    [ -n "${loopdev}" ] && losetup --detach "${loopdev}" || true
+    [ -n "${loopdev}" ] && losetup --detach "${loopdev}" || true 
 }
 trap cleanup EXIT
 
@@ -56,7 +57,8 @@ echo Downloading ${file}
 [ ! -f "${file}" ] && wget --quiet "${rpi_url}/${file}"
 
 # Create, partition and format the image
-fallocate -l "${size}" "${image}"
+#fallocate -l "${size}" "${image}"
+dd if=/dev/zero of="${image}" bs=1 seek="${size}" count=0
 loopdev=$(losetup --find --show "${image}")
 parted --script "${loopdev}" mklabel msdos
 parted --script "${loopdev}" mkpart primary fat32 0% 200M
