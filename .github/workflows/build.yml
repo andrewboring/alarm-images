@@ -20,18 +20,18 @@ jobs:
       # Note: Uploading zip file artifact will be double zip. Do not delete .img file
       # See https://github.com/actions/upload-artifact#zipped-artifact-downloads
 
-     - name: Build Raspberry Pi 2 Armv7 Image
+      - name: Build Raspberry Pi 2 Armv7 Image
         run: |
           sudo bash create-image armv7 8G
           sudo cp rpi-armv7-archlinux.img rpi-2-armv7-archlinux.img
           zip -v rpi-2-armv7-archlinux.img.zip rpi-2-armv7-archlinux.img
 
-    - name: Build Raspberry Pi 3 Armv7 Image
+      - name: Build Raspberry Pi 3 Armv7 Image
         run: |
           sudo cp rpi-armv7-archlinux.img rpi-3-armv7-archlinux.img
           zip -v rpi-3-armv7-archlinux.img.zip rpi-3-armv7-archlinux.img
 
-    - name: Build Raspberry Pi 4 Armv7 Image
+      - name: Build Raspberry Pi 4 Armv7 Image
         run: |
           sudo cp rpi-armv7-archlinux.img rpi-4-armv7-archlinux.img
           zip -v rpi-4-armv7-archlinux.img.zip rpi-4-armv7-archlinux.img
