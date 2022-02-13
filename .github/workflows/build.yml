@@ -97,7 +97,7 @@ jobs:
             rpi-2-armv7-archlinux.img.zip
             rpi-3-armv7-archlinux.img.zip
             rpi-3-aarch64-archlinux.img.zip
-			      rpi-4-armv7-archlinux.img.zip
+            rpi-4-armv7-archlinux.img.zip
             rpi-4-aarch64-archlinux.img.zip
         env:
           GITHUB_TOKEN: ${{ github.token }}
