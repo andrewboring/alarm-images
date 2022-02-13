@@ -8,9 +8,12 @@ These are *not* official images from, nor are they supported by the [Arch Linux]
 
 Each image is built from [upstream tarballs](https://archlinuxarm.org/about/downloads) distributed by the Arch Linux ARM project, but written to a prepared 8GB image file. This image file can then be written to any SD Card 8GB+. The remaining space of the SD Card can be used as desired (expand partition and filesystem to fit, or create additional partitions).
 
+You will still need to run `pacman-key init` and  `pacman-key --populate archlinuxarm` after burning the image.
+
+
 ## Background
 
-Installing Arch Linux ARM to an SD Card is as simple as following their instructions. However, it's a manual process that gets tiresome when you need to test installation/setup/deployment scripts. Building an image is better, but the conventional entry point for MicroSD Cards these days is 32GB. Writing an image from a 32GB card takes too much space, and writing that 32GB back to card (even when most of the data is empty) is too time consuming. An 8GB base image is much better.
+Installing Arch Linux ARM to an SD Card is as simple as following their instructions. However, it's a manual process that gets tiresome when you need to test installation/setup/deployment scripts. Building an image is better, but the conventional entry point for MicroSD Cards these days is 32GB. Writing an image from a 32GB card takes too much disk space, and writing that 32GB back to card (even when most of the data is empty) is too time consuming. An 8GB base image is much better.
 
 But building sparse images on macOS to create BIOS partitions, write Ext4 filesystems, and unpack Arch Linux ARM with bsdtar is...challenging, at best.
 
@@ -22,6 +25,9 @@ Just download, burn, and boot!
 If you just want the downloads, head over to [Releases](https://github.com/andrewboring/alarm-images/releases) and get the appropriate one for your Raspberry Pi. Or select the latest version from the Files section below.
 
 Then follow the standard instructions for your operating system to burn the image to your SD Card.
+
+Note: You will still need to run `pacman-key init` and  `pacman-key --populate archlinuxarm` after burning the image.
+
 
 
 ### Latest Files
@@ -45,8 +51,6 @@ Then follow the standard instructions for your operating system to burn the imag
 ### Update Frequency
 The Arch Linux ARM project releases updated tarballs, but not with the same frequency as Arch Linux. Therefore, these images may not be aligned with the latest tarball from Arch Linux ARM.
 
-[ to do: add script to master control to check for upstream updates and trigger a new release on demand]
-
 
 ## Requirements
 
@@ -59,6 +63,10 @@ pacman -Syu dosfstools parted wget
 ## Source
 The source repo includes a Vagrant file to boot a default Arch Linux box, and launches a script to automatically download the tarballs and build the releases. You'll need [Vagrant](https://www.vagrantup.com) and [Virtualbox](https://virtualbox.org).
 
-If you'd like to build a specific image yourself (eg, to change the image size or add additional software to the image), just edit the Vagrant file and comment out the shell stuff. The create-image file will be available in /tmp/vagrant for you to run manually to create a single image.
+If you'd like to build a specific image yourself (eg, to change the image size or add additional software to the image), just edit the Vagrant file and comment out the shell stuff. The create-image file will be available in /home/vagrant/scripts for you to run manually to create a single image.
+
+```vagrant$ scripts/create-image armv7 8G```
 
 Once built, you'll need to copy the appropriate image out of the Vagrant box before deleting it.
+
+```laptop$ vagrant scp default:/home/vagrant/scripts/rpi-armv7-archlinux.img .```

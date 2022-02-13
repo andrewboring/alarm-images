@@ -5,7 +5,6 @@ Vagrant.configure(2) do |config|
   config.vm.box = "archlinux/archlinux"
   config.vm.synced_folder "scripts", "/home/vagrant/scripts"
   config.ssh.username = "vagrant"
-  config.ssh.password = "vagrant"
   config.ssh.insert_key = false
   config.vm.provision "shell", inline: <<-SHELL
 	#pacman-key --init

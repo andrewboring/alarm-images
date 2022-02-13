@@ -29,9 +29,11 @@ mount="mnt" # Local directory to mount the image (automatically created/delete a
 rpi_url="http://fl.us.mirror.archlinuxarm.org/os"
 
 # Grab the first two arguments, using the defaults if not set
-#   ./create-image rpi-armv7 8G         # create a 4 gig image called myname.img
-size="${2:-8G}"
+#   ./create-image 					# create an image with defaults: 8GB, armv7
+#   ./create-image aarch64     		# create an image,  8GB (default), aarch64,
+#   ./create-image armv7 16G     # create a 16GB armv7 image
 arch="${1:-armv7}"
+size="${2:-8G}"
 image="rpi-${arch}-archlinux.img"
 file="ArchLinuxARM-rpi-${arch}-latest.tar.gz"
 loopdev=
