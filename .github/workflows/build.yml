@@ -57,11 +57,29 @@ jobs:
 
       # Upload artifacts
 
+      - name: Upload Raspberry Pi 2 Armv7 Image artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: rpi-2-armv7-archlinux.img
+          path: rpi-2-armv7-archlinux.img
+
+      - name: Upload Raspberry Pi 3 Armv7 Image artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: rpi-3-armv7-archlinux.img
+          path: rpi-3-armv7archlinux.img
+
       - name: Upload Raspberry Pi 3 AArch64 Image artifact
         uses: actions/upload-artifact@v2
         with:
           name: rpi-3-aarch64-archlinux.img
           path: rpi-3-aarch64-archlinux.img
+
+      - name: Upload Raspberry Pi 4 Armv7 Image artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: rpi-4-armv7-archlinux.img
+          path: rpi-4-armv7-archlinux.img
 
       - name: Upload Raspberry Pi 4 AArch64 Image artifact
         uses: actions/upload-artifact@v2
@@ -77,9 +95,10 @@ jobs:
         with:
           files: |
             rpi-archlinux.img.zip
-            rpi-2-archlinux.img.zip
-            rpi-4-archlinux.img.zip
+            rpi-2-armv7-archlinux.img.zip
+            rpi-3-armv7-archlinux.img.zip
             rpi-3-aarch64-archlinux.img.zip
+			rpi-4-armv7-archlinux.img.zip
             rpi-4-aarch64-archlinux.img.zip
         env:
           GITHUB_TOKEN: ${{ github.token }}
