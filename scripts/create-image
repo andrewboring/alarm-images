@@ -31,7 +31,7 @@ rpi_url="http://fl.us.mirror.archlinuxarm.org/os"
 # Grab the first two arguments, using the defaults if not set
 #   ./create-image 					# create an image with defaults: 8GB, armv7
 #   ./create-image aarch64     		# create an image,  8GB (default), aarch64,
-#   ./create-image armv7 16G     # create a 16GB armv7 image
+#   ./create-image armv7 16G        # create a 16GB armv7 image
 arch="${1:-armv7}"
 size="${2:-8G}"
 image="rpi-${arch}-archlinux.img"
@@ -63,8 +63,8 @@ echo Downloading ${file}
 dd if=/dev/zero of="${image}" bs=1 seek="${size}" count=0
 loopdev=$(losetup --find --show "${image}")
 parted --script "${loopdev}" mklabel msdos
-parted --script "${loopdev}" mkpart primary fat32 0% 200M
-parted --script "${loopdev}" mkpart primary ext4 200M 100%
+parted --script "${loopdev}" mkpart primary fat32 0% 1000M
+parted --script "${loopdev}" mkpart primary ext4 1000M 100%
 bootdev=$(ls "${loopdev}"*1)
 rootdev=$(ls "${loopdev}"*2)
 mkfs.vfat -F32 ${bootdev}
